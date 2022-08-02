@@ -1,0 +1,188 @@
+@import "Variables";
+@import "Utils";
+
+.tutorial-panel {
+    position: absolute;
+    @include center();
+    width: 750px;
+    height: 580px;
+    background-color: $navBar;
+    border-radius: 24px;
+    border-style: solid;
+    border-color: $lightGreyBorder;
+    border-width: 3px;
+    z-index: 10;
+    @include strongShadow();
+}
+
+.tutorial-link {
+    color: $bgLightBlue;
+    &:hover {
+        color: lighten($bgLightBlue, 10%);
+    }
+}
+
+.tutorial-control-wrapper {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tutorial-button {
+    color: white;
+    vertical-align: top;
+    height: 43px;
+    width: 90px;
+    border: 0;
+    box-shadow: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 18px;
+    &:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+@mixin tutorial-side-button($translate) {
+    bottom: 42px;
+    position: absolute;
+    transform: translateX($translate);
+}
+
+.tutorial-left-button {
+    @include tutorial-side-button(-110%);
+    left: 50%;
+    &:active {
+        bottom: 38px;
+    }
+}
+
+.tutorial-right-button {
+    @include tutorial-side-button(110%);
+    right: 50%;
+    &:active {
+        bottom: 38px;
+    }
+    &:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+.content-top-wrapper {
+    @include centerFlex();
+    height: 50px;
+}
+
+.content-top {
+    margin-left: auto;
+    margin-right: 30px;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    height: 400px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.control-buttons {
+    width: 100%;
+    height: 100px;
+    @include centerFlex();
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.x-tutorial-button {
+    color: white;
+    position: absolute;
+    left: 100%;
+    transform: translate(-75%, -25%);
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: $darkRed;
+    width: 24px;
+    height: 24px;
+    display: table;
+    &:hover {
+        background-color: lighten($darkRed, 8%);
+    }
+    &:active {
+        background-color: darken($darkRed, 8%);
+    }
+}
+
+.x-tutorial-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tutorial-title {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.tutorial-text {
+    color: whitesmoke;
+    font-size: 15px;
+    text-align: center;
+}
+
+@mixin subText($margin) {
+    color: whitesmoke;
+    font-size: 18px;
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+.tutorial-subtext {
+    margin-top: 30px;
+    @include subText(0%);
+    text-align: justify;
+}
+
+.tutorial-subtext-center {
+    margin-top: 30px;
+    text-align: center;
+    @include subText(15%);
+}
+
+.tutorial-subtext-narrow {
+    margin-top: 60px;
+    text-align: justify;
+    @include subText(15%);
+}
+
+.text-row {
+    padding: 5px;
+}
+
+.tutorial-img {
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.tutorial-img-wrapper {
+    padding-top: 40px;
+}
+
+.tutorial-img-large-wrapper {
+    padding-top: 15px;
+}
+
+.tut-blue-button {
+    background-color: $bgLightBlue;
+    box-shadow: 0 6px 0 0 $shadowLightBlue, 0 0 0 0 #bbb;
+    color: white;
+    &:hover {
+        background-color: lighten($bgLightBlue, 8%)
+    }
+    &:active {
+        box-shadow: 0 3px 0 0 $shadowLightBlue, 0 0 0 0 #bbb;
+    }
+}

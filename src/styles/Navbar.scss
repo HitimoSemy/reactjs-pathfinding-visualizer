@@ -1,0 +1,348 @@
+@import "Variables";
+@import "Utils";
+
+.title {
+    display: inline-block;
+    vertical-align: center;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    margin: auto 350px auto 10px;
+    white-space: nowrap;
+    font-weight: 600;
+    &:hover {
+        color: $lightGreen;
+        cursor: pointer;
+    }
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: bottom;
+    margin: 0;
+    padding: 0;
+}
+
+.top-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 18px;
+    min-height: 40px;
+    height: auto;
+    background-color: $navBar;
+}
+
+.button {
+    font-weight: 600;
+    height: 48px;
+    border: 0;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    border-radius: 6px;
+    margin: 0 20px 0 20px;
+    &:focus {
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
+
+.special-button {
+    font-weight: 600;
+    vertical-align: top;
+    border: 0;
+    padding: 10px;
+    background: transparent;
+    color: white;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0 10px 0 10px;
+    height: 75px;
+    &:hover {
+        background-color: $lightGreen;
+    }
+    &:active {
+        background-color: $darkGreen;
+    }
+}
+
+.center {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.svg-icon {
+    display: block;
+    margin: auto;
+}
+
+.viz-button {
+    width: 96px;
+}
+
+.half-viz-button {
+    width: 48px;
+}
+
+.half-button-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px 0 20px;
+    padding: 0;
+}
+
+.half-button-left {
+    padding: 0;
+    min-height: 48px;
+    border: 0;
+    border-right: 1px solid rgb(230,230,230);
+    background: none;
+    box-shadow: none;
+    border-radius: 6px 0 0 6px;
+}
+
+.half-button-right {
+    padding: 0;
+    height: 48px;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0 6px 6px 0;
+}
+
+.drop-down {
+    position: relative;
+    display: inline-block;
+    height: 75px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.drop-down:focus {
+    outline: auto;
+}
+
+.maze-img {
+    width: 30px;
+    height: 30px
+}
+
+@media only screen and (max-width: 1250px) {
+    .title {
+        margin: auto 10px auto 20px;
+    }
+    .button {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .half-button-wrapper {
+        margin: 10px;
+    }
+    .drop-down{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-device-width: 500px) {
+    .top-navbar {
+        padding: 10px;
+    }
+    .button {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .half-button-wrapper {
+        margin: 5px;
+    }
+    .maze-img {
+        width: 25px;
+        height: 25px
+    }
+    .drop-down {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+    .title {
+        font-size: 24px;
+        white-space: normal;
+        width: 200px;
+    }
+}
+
+.drop-down-text {
+    display: inline-block;
+}
+
+.drop-down-button {
+    font-weight: 600;
+    display: inline-block;
+    color: white;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0 15px 0 15px;
+    vertical-align: middle;
+    height: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.drop-down-button-wrapper {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    @include center();
+}
+
+.drop-down-button-up{
+    &:hover {
+        background-color: $lightGreen;
+    }
+}
+
+.drop-down-button-down {
+    background-color: $lightGreen;
+}
+
+.drop-down-content {
+    display: none;
+    position: absolute;
+    background-color: $navBar;
+    min-width: 200px;
+    box-shadow: $navBarShadow 0 8px 24px;
+    z-index: 8;
+    padding: 5px 0 10px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 10px;
+    div {
+        color: #E4E6E7;
+        padding: 2px 20px 2px;
+        text-decoration: none;
+        display: block;
+        border-radius: 4px;
+        &:hover {
+            background-color: $bgGreen;
+            cursor: pointer;
+        }
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.2s linear;
+}
+
+.fade-out {
+    animation: fadeOut 0.2s linear;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+.drop-down-text {
+    margin-right: 15px;
+}
+
+.clr-drop-down-content {
+    min-width: 140px;
+}
+
+.tiles-drop-down-content {
+    min-width: 130px;
+}
+
+.maze-drop-down-content {
+    min-width: 220px;
+}
+
+.red-button {
+    background-color: $darkRed;
+    color: white;
+    &:hover {
+        cursor: pointer;
+        background-color: lighten($darkRed, 8%);
+    }
+    &:active {
+        cursor: pointer;
+        background-color: darken($darkRed, 8%);
+    }
+}
+
+@mixin rotate($degrees, $transition-duration, $animation-duration) {
+    transition-duration: $transition-duration;
+    transform: rotate($degrees);
+    -webkit-transform: rotate($degrees);
+    -webkit-animation-duration: $animation-duration;
+}
+
+.arrowUp {
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    @include rotate(-135deg, 0.2s, 500ms);
+}
+
+.arrowDown {
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    @include rotate(45deg, 0.2s, 500ms);
+}
+
+.green-button {
+    background-color: $bgGreen;
+    color: white;
+    &:hover{
+        background-color: lighten($bgGreen, 10%);
+    }
+    &:active {
+        background-color: darken($bgGreen, 8%);
+    }
+}
+
+@media only screen and (max-device-width: 550px) {
+    .settings-button {
+        display: none;
+    }
+}
+
+.track {
+    stroke: rgb(230,230,230);
+    stroke-width: 1.5;
+}
+
+.round {
+    stroke-linejoin: round;
+}
+
+.box {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 1130px) {
+    .tiles-drop-down {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    .maze-drop-down {
+        display: none;
+    }
+}
